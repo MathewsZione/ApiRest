@@ -7,12 +7,12 @@ var faker = require ('faker-br')
 describe('Testes da Funcionalidade Usuários', () => {
      let token
      before(() => {
-         cy.token('undefined_Braga@yahoo.com', 'teste').then(tkn => { token = tkn })
+         cy.token('fulano@qa.com', 'teste').then(tkn => { token = tkn })
      });
      
 
     it('Deve validar contrato de usuários', () => {
-
+        
        cy.request('usuarios').then( response => {
           return contrato.validateAsync(response.body) 
        })
@@ -23,7 +23,7 @@ describe('Testes da Funcionalidade Usuários', () => {
 
          cy.request({
           method: 'GET',
-          Url: 'usuarios'
+          url: 'usuarios'
          }).then((response) =>{
           expect(response.status).to.equal(200)
          })
