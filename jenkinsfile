@@ -12,5 +12,9 @@ pipeline{
                 sh 'cy:servertest'
             }
         }
+
+        stage('Repositorio'){
+            sh 'git branch: 'main', url: 'https://github.com/MathewsZione/ApiRest.git''
+        }
     }
 }
