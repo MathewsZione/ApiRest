@@ -1,0 +1,16 @@
+pipeline{
+    agent any 
+
+    stages {
+        stage('Setup'){
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'cy:servertest'
+            }
+        }
+    }
+}
