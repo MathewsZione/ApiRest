@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:dash": "npx cypress run --record --key 364703eb-a746-407e-9fe7-337e0d3b07d1",
     "test": "npm run cy:run",
     "start": "npx serverest",
     "cy:run": "npx cypress run",
     "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json",
-    "cy:servertest": "start-server-and-test start http://localhost:3000/usuarios test"
-    
+    "cy:run-tests": "start-server-and-test start http://localhost:3000/usuarios test && npx cypress run --record --key 364703eb-a746-407e-9fe7-337e0d3b07d1"
+
   },
   "author": "",
   "license": "ISC",
