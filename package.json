@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run cy:run",
     "start": "npx serverest",
     "cy:run": "npx cypress run",
-    "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json  > mochawesome-report/report.json && npx marge mochawesome-report/report.json",
-    "cy:servertest": "start-server-and-test start http://localhost:3000/usuarios test"
+    "cy:report": "npx mochawesome-merge ./mochawesome-report/mochawesome*.json > mochawesome-report/report.json && npx marge mochawesome-report/report.json",
+    "cy:servertest": "start-server-and-test start http://localhost:3000/usuarios cy:run",
+    "test": "npm run cy:servertest && npm run cy:report"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +18,7 @@
     "start-server-and-test": "^2.0.1"
   },
   "dependencies": {
-    "faker": "^6.6.6",
+    "faker": "^5.5.3",
     "faker-br": "^0.4.1",
     "joi": "^17.11.0",
     "js": "^0.1.0",
